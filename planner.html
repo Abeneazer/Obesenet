@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Trip Planner - Discover Ethiopia</title> 
+<style> 
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; } 
+body { 
+font-family: Arial, sans-serif; 
+background: #f0f4f8; 
+} 
+ 
+nav { 
+background: #1e3a8a; 
+padding: 20px; 
+text-align: center; 
+} 
+nav a { 
+color: white; 
+margin: 0 15px; 
+text-decoration: none; 
+font-weight: bold; 
+} 
+.hero { 
+ height: 60vh;
+background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4'); 
+background-size: cover; 
+display: flex; 
+align-items: center;
+justify-content: center; 
+text-align: center; 
+color: white; 
+position: relative; } 
+.hero::before { 
+ content: ''; 
+position: absolute; 
+top:0; 
+left:0; 
+right:0; 
+bottom:0; 
+background: rgba(0,0,0,0.5); 
+}
+.hero-text h1 {
+font-size: 3.8rem; 
+text-shadow: 0 4px 15px rgba(0,0,0,0.8); 
+} 
+.content 
+ { 
+padding: 50px 20px; 
+max-width: 800px; 
+margin: 0 auto; 
+text-align: center; 
+} input, textarea, button 
+{ 
+ width: 90%; 
+max-width: 600px; 
+margin: 12px auto; 
+padding: 14px; 
+border: 1px solid #ccc; 
+ border-radius: 10px; 
+display: block; } 
+textarea { 
+height: 180px; 
+resize: vertical; 
+} 
+button { 
+background: #1e40af; 
+color: white; 
+font-weight: bold; 
+cursor: pointer; 
+} 
+button:hover { 
+background: #2563eb; 
+} 
+ #charCount 
+{ font-size: 0.9rem; 
+color: #555; 
+margin-top: 5px; } 
+</style> 
+</head>
+ <body> 
+    <nav> 
+        <a href="index.html">Home</a> 
+        <a href="destinations.html">Destinations</a> 
+        <a href="booking.html">Book Trip</a> 
+        <a href="planner.html">Trip Planner</a> 
+        <a href="reviews.html">Reviews</a> 
+        <a href="index.html#contact">Contact Us</a> 
+    </nav> 
+    <div class="hero"> 
+    <div class="hero-text">
+    <h1>Your travel plans simplified</h1>
+</div> 
+</div>
+</div>
+<div class="content">
+<h2>Itinerary Builder</h2>
+<input type="text" id="trip-name" placeholder="Trip Name (e.g. Northern Ethiopia Tour)">
+<input type="number" id="budget" placeholder="Your Budget (ETB)">
+<textarea id="activities" maxlength="500" placeholder="Activities and places you want to visit..."></textarea>
+<div id="charCount">0 / 500 characters</div>
+<button onclick="savePlan()">Save My Plan</button>
+</div>
+<script>
+const textarea = document.getElementById('activities');
+const charCount = document.getElementById('charCount');
+textarea.addEventListener('input', () => {
+const currentLength = textarea.value.length;
+charCount.textContent = `${currentLength} / 500 characters`;
+});
+function savePlan() {
+const tripName = document.getElementById('trip-name').value;
+if (tripName) {
+alert(`Your trip plan "${tripName}" has been saved successfully!`);
+} else {
+alert("Please enter a trip name!");
+}
+}
+</script>
+</body>
+</html>

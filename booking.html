@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Trip - Discover Ethiopia</title>
+    <style>
+     * { 
+margin: 0; 
+padding: 0; 
+ box-sizing: border-box; 
+ }
+ body { 
+font-family: Arial, sans-serif; 
+ background: #f0f4f8; 
+ color: #333; 
+ }
+ nav {
+ background: #1e3a8a; 
+ padding: 20px;
+text-align: center;
+position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ nav a {
+ color: white;
+ margin: 0 15px;
+text-decoration: none;
+ font-weight: bold;
+ opacity: 0.8;
+ transition: opacity 0.2s;
+ }
+ nav a:hover {
+ opacity: 1;
+ }
+ nav a.active {
+ border-bottom: 2px solid #ffffff;
+ padding-bottom: 4px;
+ opacity: 1;
+ }
+  .hero {
+ min-height: 100vh;
+ background-image: url('https://static1.simpleflyingimages.com/wordpress/wp-content/uploads/2024/03/ethiopian-airlines-boeing-777x.jpg');
+ background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+  display: flex;
+   flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 60px 20px;
+ position: relative;
+  }
+   .hero::before {
+  content: ''; 
+ position: absolute; 
+  top: 0; 
+ left: 0; 
+ right: 0; 
+ bottom: 0;
+ background: rgba(0, 0, 0, 0.5); 
+ z-index: 1;
+ }
+ .hero-text { 
+  z-index: 2; 
+ text-align: center;
+ color: white;
+ margin-bottom: 30px;
+ }
+.hero-text h1 { 
+ font-size: 4.5rem; 
+ text-shadow: 0 4px 15px rgba(0,0,0,0.8); 
+  margin-bottom: 10px;
+ }
+ .hero-text p {
+font-size: 1.2rem;
+ text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+ opacity: 0.9;
+}
+ .booking-card {
+background: rgba(255, 255, 255, 0.95); 
+padding: 40px;
+ border-radius: 12px;
+ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+ width: 100%;
+ max-width: 650px;
+ z-index: 2;
+  }
+  .form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+ gap: 20px;
+ }
+  .full-width {
+grid-column: span 2;
+ }
+ .form-group {
+display: flex;
+flex-direction: column;
+ }
+ label {
+font-size: 0.85rem;
+ font-weight: bold;
+ color: #1e3a8a; 
+ margin-bottom: 6px;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ }
+ input, select {
+width: 100%;
+ padding: 12px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 1rem;
+outline: none;
+background-color: #fff;
+transition: all 0.2s;
+ }
+input:focus, select:focus {
+ border-color: #1e3a8a; 
+ box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+ .btn-submit {
+ grid-column: span 2;
+background: #1e3a8a; 
+ color: white;
+ border: none;
+ padding: 16px;
+  font-size: 1.1rem;
+font-weight: bold;
+border-radius: 6px;
+ cursor: pointer;
+ margin-top: 10px;
+ transition: background 0.2s, transform 0.1s;
+        }
+.btn-submit:hover {
+ background: #152a66; 
+}
+.btn-submit:active {
+transform: scale(0.99);
+}
+ @media (max-width: 768px) {
+.form-grid { grid-template-columns: 1fr; }
+.full-width { grid-column: span 1; }
+.btn-submit { grid-column: span 1; }
+.hero-text h1 { font-size: 3rem; }
+ }
+ </style>
+</head>
+<body>
+<nav>
+<a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="booking.html" class="active">Book Trip</a>
+    <a href="planner.html">Trip Planner</a>
+    <a href="reviews.html">Reviews</a>
+</nav>
+<div class="hero">
+<div class="hero-text">
+<h1>Step Into Adventure</h1>
+ <p>Secure your custom package to the Land of Origins</p>
+</div>
+<div class="booking-card">
+<div class="form-grid">
+<div class="form-group full-width">
+<label for="name">Full Name</label>
+<input type="text" id="name" placeholder="Enter your full name">
+</div>
+<div class="form-group">
+ <label for="destination">Destination</label>
+ <select id="destination">
+<option value="">Select Destination</option>
+<option>Gondar</option>
+<option>Lalibela</option>
+ <option>Addis Ababa</option>
+ <option>Axum</option>
+<option>Harar</option>
+ </select>
+</div>
+<div class="form-group">
+<label for="service">Package Choice</label>
+<select id="service">
+<option value="">Select Package</option>
+<option>Hotel + Flight</option>
+<option>Hotel Only</option>
+<option>Flight Only</option>
+<option>Full Tour Package</option>
+</select>
+</div>
+<div class="form-group">
+<label for="departure">Departure Date</label>
+<input type="date" id="departure">
+</div>
+<div class="form-group">
+<label for="return">Return Date</label>
+ <input type="date" id="return">
+</div>
+ <div class="form-group">
+ <label for="price">Budget Estimate</label>
+<input type="number" id="price" placeholder="Amount">
+ </div>
+<div class="form-group">
+<label for="currency">Currency</label>
+<select id="currency">
+<option value="ETB">ETB - Ethiopian Birr</option>
+<option value="USD">USD - US Dollar</option>
+<option value="EUR">EUR - Euro</option>
+<option value="GBP">GBP - British Pound</option>
+ </select>
+ </div>
+<button class="btn-submit" onclick="bookTrip()">Proceed to Secure Checkout</button>
+</div>
+</div>
+</div>
+<script>
+    function bookTrip(){
+        const name = document.getElementById('name').value;
+        const destination = document.getElementById('destination').value;
+        const departure = document.getElementById('departure').value;
+        const returnDate = document.getElementById('return').value;
+        const service = document.getElementById('service').value;
+        const price = document.getElementById('price').value;
+        const currency = document.getElementById('currency').value;
+if (!name || !destination || !departure || !returnDate || !service || !price) {
+alert('Please fill out all fields before checking out.');
+ return;
+        }
+ alert(`Processing Booking Request!\n\nName: ${name}\nDestination: ${destination}\nPackage: ${service}\nCost: ${price} ${currency}`);
+}
+</script>
+</body>
+</html>
